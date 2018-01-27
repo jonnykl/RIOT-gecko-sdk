@@ -14,6 +14,17 @@ ifeq ($(EFM32_FAMILY),efr32mg13p)
 	RAIL_LIB = $(RAIL_SDK_SRCDIR)/autogen/librail_release/librail_efr32xg13_gcc_release.a
 endif
 
-$(BINDIR)/$(MODULE).a: 
-	        cp $(RAIL_LIB) $@
+$(BINDIR)/$(MODULE).a:
+	cp $(RAIL_LIB) $@
+	arm-none-eabi-objcopy $@ \
+		--redefine-sym FRC_PRI_IRQHandler=isr_frc_pri \
+		--redefine-sym FRC_IRQHandler=isr_frc \
+		--redefine-sym MODEM_IRQHandler=isr_modem \
+		--redefine-sym RAC_SEQ_IRQHandler=isr_rac_seq \
+		--redefine-sym RAC_RSM_IRQHandler=isr_rac_rsm \
+		--redefine-sym BUFC_IRQHandler=isr_bufc \
+		--redefine-sym AGC_IRQHandler=isr_agc \
+		--redefine-sym PROTIMER_IRQHandler=isr_protimer \
+		--redefine-sym SYNTH_IRQHandler=isr_synth \
+		--redefine-sym RFSENSE_IRQHandler=isr_rfsense
 
