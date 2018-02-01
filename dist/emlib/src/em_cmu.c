@@ -42,6 +42,8 @@
 #include "em_system.h"
 #include "em_common.h"
 
+#pragma GCC diagnostic ignored "-Wimplicit-fallthrough"
+
 /***************************************************************************//**
  * @addtogroup emlib
  * @{
