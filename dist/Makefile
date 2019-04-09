@@ -10,4 +10,8 @@ ifneq (,$(filter gecko_sdk_librail_pa,$(USEMODULE)))
   DIRS += radio/rail_lib/plugin/pa-conversions
 endif
 
+ifneq (,$(filter nimble,$(USEPKG)))
+  DIRS += radio
+endif
+
 include $(RIOTBASE)/Makefile.base
