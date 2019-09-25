@@ -1,3 +1,3 @@
-MODULE = gecko_sdk_mbedtls
+MODULE = gecko_sdk_mbedtls_library
 
 include $(RIOTBASE)/Makefile.base
