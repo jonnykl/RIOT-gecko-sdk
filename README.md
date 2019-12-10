@@ -10,6 +10,7 @@ Only the following is included in the `dist/` folder:
 * emlib (vendor)
 * emlib-extra (additional utility methods)
 * radio (vendor)
+* mbedtls
 
 ## Copyright
 The `dist/` folder contains a *modified* copy of EMLIB and RAIL, copyrighted by Silicon Labs.
